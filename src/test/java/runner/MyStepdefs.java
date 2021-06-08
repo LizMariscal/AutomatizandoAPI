@@ -26,17 +26,19 @@ public class MyStepdefs {
     }
 
     @When("^I send (POST|PUT|DELETE|GET) request '(.*)' whit json and (TOKEN|BASIC) authentication$")
-    public void iSendPOSTRequestApiUserJasonWhitJsonBasicAuthentication(String method, String url, String authentication, String jsonBody) {
+    public void iSendPOSTRequestApiProjectsJsonWithJson(String method,String url, String authentication, String jsonBody) {
         RequestInformation request = new RequestInformation();
-        request.setUrl(HOST + this.replaceVariables(url));
+        request.setUrl(HOST+this.replaceVariables(url));
         request.setBody(this.replaceVariables(jsonBody));
-        if (authentication.equals("TOKEN")){
+        if (authentication.equals("TOKEN")) {
 
-            request.addHeaders(TOKEN_AUTHENTICATION_HEADER,this.replaceVariables(authentication));
+            request.addHeaders(TOKEN_AUTHENTICATION_HEADER, this.replaceVariables(authentication));
         }else {
-            request.addHeaders(BASIC_AUTHENTICATION_HEADER,BASIC_AUTHENTICATION);
+            request.addHeaders(BASIC_AUTHENTICATION_HEADER, BASIC_AUTHENTICATION);
+
         }
-        response = FactoryRequest.make(method.toLowerCase()).send(request);
+
+        response= FactoryRequest.make(method.toLowerCase()).send(request);
     }
 
     @Then("^I expect the response code (\\d+)$")

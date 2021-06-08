@@ -40,6 +40,12 @@ Feature: Users
 
     """
     Then I expect the response code 200
+    When I send DELETE request 'api/user/ID_USER.jason' whit json and BASIC authentication
+
+    """
+
+    """
+    Then I expect the response code 200
 
 
     When I send GET request 'api/user.jason' whit json and BASIC authentication
