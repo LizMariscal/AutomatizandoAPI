@@ -2,7 +2,7 @@ package clientApi;
 
 public class FactoryRequest {
 
-    public static RequestClient make (String type){
+    public static RequestClient make(String type){
         RequestClient client;
         switch (type){
             case "put":
@@ -18,7 +18,7 @@ public class FactoryRequest {
                 client = new RequestDELETE();
                 break;
             default:
-                client = new RequestGET();
+                client= new RequestGET();
                 break;
         }
         return client;

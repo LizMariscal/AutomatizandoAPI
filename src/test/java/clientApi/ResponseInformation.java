@@ -5,7 +5,9 @@ public class ResponseInformation {
     private String responseMessage;
     private int responseCode;
 
-    public ResponseInformation(){}
+    public ResponseInformation(){
+
+    }
 
     public ResponseInformation(String responseBody, int responseCode){
         this.responseBody=responseBody;

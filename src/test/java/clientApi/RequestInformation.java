@@ -12,7 +12,9 @@ public class RequestInformation {
     private MultivaluedMap<String, Object> headers= new MultivaluedHashMap<>();
     private String body;
 
-    public RequestInformation() { }
+    public RequestInformation() {
+
+    }
 
     public RequestInformation(String url, Map<String, String> params, MultivaluedMap<String, Object> headers, String body) {
         this.url = url;
